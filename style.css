@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  body {
+    background: radial-gradient(circle, rgb(199, 80, 223) 0%, rgb(199, 11, 174) 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .waviy {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .waviy span {
+    display: inline-block;
+    font-size: 40px;
+    background: linear-gradient(to left, #0f4dd4 0%, #2615e1 50%, #0866b4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i));
+  }
+  
+  @keyframes flip {
+    0%, 80% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  .main {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    background-color: white;
+    border: 5px solid #960ea3;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden; /* Prevent overflow of buttons */
+  }
+  
+  .main input[type='text'] {
+    width: 100%;
+    height: 80px;
+    text-align: right;
+    padding: 3px 6px;
+    outline: none;
+    font-size: 40px;
+    border: 5px solid #8b00a7;
+    border-radius: 6px;
+    color: #820582;
+  }
+  
+  .btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  .btn input[type='button'] {
+    flex: 1 1 22%;
+    margin: 4px;
+    height: 60px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.5s;
+    background-color: #df0bdf;
+    border-radius: 6px;
+    color: white;
+    box-sizing: border-box; /* Ensure padding/margin does not cause overflow */
+  }
+  
+  .btn input[type='button']:hover {
+    background-color: #179eec;
+    color: #bf08cc;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    .main {
+      max-width: 350px;
+    }
+  
+    .main input[type='text'] {
+      font-size: 32px;
+      height: 70px;
+    }
+  
+    .btn input[type='button'] {
+      height: 55px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .main {
+      max-width: 300px;
+    }
+  
+    .main input[type='text'] {
+      font-size: 28px;
+      height: 60px;
+    }
+  
+    .btn input[type='button'] {
+      height: 50px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .main {
+      max-width: 250px;
+    }
+  
+    .main input[type='text'] {
+      font-size: 24px;
+      height: 50px;
+    }
+  
+    .btn input[type='button'] {
+      height: 45px;
+      font-size: 12px;
+      margin: 2px;
+    }
+  
+    .waviy span {
+      font-size: 30px;
+    }
+  }
+  
+  /* Prevent size reduction further on very small screens */
+  @media (max-width: 350px) {
+    .main {
+      transform: scale(0.9);
+    }
+  
+    .waviy span {
+      font-size: 28px;
+    }
+  }
+  
+  /* Prevent buttons from overflowing and maintain grid layout */
+  @media (max-width: 320px) {
+    .main {
+      transform: scale(0.85);
+    }
+  
+    .btn input[type='button'] {
+      flex: 1 1 21%;
+      height: 42px;
+      font-size: 10px;
+      margin: 2px;
+    }
+  
+    .waviy span {
+      font-size: 26px;
+    }
+  }
+  
